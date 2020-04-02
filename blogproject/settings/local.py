@@ -1,6 +1,6 @@
 from .common import *
 
-SECRET_KEY = '8+ize@+ae1(d32+(pk_p7!&%@d#o_&*i$5ojpr-1zd_1aer)(o'
+SECRET_KEY = 'development-secret-key'
 
 DEBUG = True
 
