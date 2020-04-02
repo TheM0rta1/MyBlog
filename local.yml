@@ -5,12 +5,12 @@ volumes:
   esdata_local:
 
 services:
-  hellodjango_blog_tutorial_local:
+  MyBLog_local:
     build:
       context: .
       dockerfile: ./compose/local/Dockerfile
-    image: hellodjango_blog_tutorial_local
-    container_name: hellodjango_blog_tutorial_local
+    image: MyBlog_local
+    container_name: MyBlog_local
     working_dir: /app
     volumes:
       - database_local:/app/database
@@ -25,8 +25,8 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/elasticsearch/Dockerfile
-    image: hellodjango_blog_tutorial_elasticsearch_local
-    container_name: hellodjango_blog_tutorial_elasticsearch_local
+    image: MyBlog_elasticsearch_local
+    container_name: MyBlog_elasticsearch_local
     volumes:
       - esdata_local:/usr/share/elasticsearch/data
     ports:
