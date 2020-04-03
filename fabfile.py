@@ -1,5 +1,6 @@
-from fabric import task
+from fabric import task, Connection
 from invoke import Responder
+from paramiko import RSAKey, pkey
 
 from _credentials import github_password, github_username
 
@@ -21,9 +22,12 @@ def _get_github_auth_responders():
 
 @task()
 def deploy(c):
+    # con = Connection(host='',
+    #                  user='root',
+    #                  connect_kwargs={pkey: RSAKey.from_private_key_file('D:/themortal.pem')})
+    # con.run('su - mortal')
     supervisor_conf_path = '~/etc/'
     supervisor_program_name = 'MyBLog'
-
     project_root_path = '~/apps/MyBlog/'
 
     # 先停止应用
