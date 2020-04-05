@@ -11,7 +11,7 @@ RUN apk update \
 
 WORKDIR /app
 
-RUN pip install pipenv -i https://pypi.douban.com/simple
+RUN pip3 install pipenv -i https://pypi.douban.com/simple
 
 COPY Pipfile /app/Pipfile
 COPY Pipfile.lock /app/Pipfile.lock
